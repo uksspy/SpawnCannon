@@ -1,5 +1,6 @@
 package me.uksspy.SpawnCannon.config;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import net.md_5.bungee.api.ChatColor;
 public class Config {
 
     private FileConfiguration config;
+    private SpawnCannon plugin;
 
     public World world;
     public Location center;
@@ -39,8 +41,28 @@ public class Config {
     }
 
     public Config(SpawnCannon plugin){
+        this.plugin = plugin;
         config = plugin.getConfig();
+        createConfig();
         loadConfig();
+    }
+
+    private void createConfig(){
+        try {
+            if (!plugin.getDataFolder().exists()) {
+                plugin.getDataFolder().mkdirs();
+            }
+            File file = new File(plugin.getDataFolder(), "config.yml");
+            if (!file.exists()) {
+                plugin.getLogger().info("Config.yml not found, creating!");
+                plugin.saveDefaultConfig();
+            } else {
+                plugin.getLogger().info("Config.yml found, loading!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
     }
 
     private void loadConfig(){
