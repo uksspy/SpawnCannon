@@ -1,0 +1,9 @@
+name: SpawnCannon
+main: me.uksspy.SpawnCannon.SpawnCannon
+version: 1.1.0
+description: Spawns players randomly in configured world by launching them out of the sky.
+commands:
+   sc:
+     description: Master SpawnCannon command.
+   launch:
+     description: Launch yourself or others.

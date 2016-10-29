@@ -1,0 +1,32 @@
+#the world players are launched into.
+world: world
+
+#the location in 'world' which the launch positions are centered on.
+center: 0,0
+
+#the range in every direction around the 'center' in which players are launched.
+range: 1000
+
+#the height players are launched to.
+height: 270
+
+#the chat message players are sent when they are launched.
+#Valid variables: %x %y %z %player
+launchmsg: '&6Launched to X: %x Z: %z'
+
+#Message sent to players who attempt to launch without the required permission.
+nopermmsg: '&4&lYou do not have permission to launch!'
+
+#Whether or not launch particle effects are enabled.
+particleeffects: true
+
+#sounds to be played during launch (sound,volume,pitch)
+launchsounds:
+- ENTITY_LIGHTNING_THUNDER,50,0.5
+- ENTITY_GENERIC_EXPLODE,3,2
+
+#sounds to be played at landing (sound,volume,pitch)
+landsounds:
+- ENTITY_GENERIC_EXPLODE,3,1
+
+launchblocks:
